@@ -1,2 +1,116 @@
-# End-to-End-Housing-Price-Prediction-From-Decision-Trees-to-Ensemble-Systems
-This project focuses on predicting residential property prices using structured housing data. The objective was to build a robust, reusable machine learning pipeline and evaluate how different models - particularly ensemble methods - improve predictive performance.
+# 🏠 House Price Prediction using Ensemble Machine Learning
+
+### 📌 **Executive Summary** <br/>
+This project focuses on predicting residential property prices using structured housing data. The objective was to build a **robust, reusable machine learning pipeline** and evaluate how different models, particularly **ensemble methods**, improve predictive performance. <br/>
+<br/> **The project emphasises:**
+- End to end ML workflow  
+- Preprocessing pipelines  
+- Comparative analysis of ensemble model performance 
+- Model evaluation and error diagnostics  
+
+### 🎯 **Problem Statement** <br/>
+Predict house sale prices (`SalePrice`) using a dataset containing numerical and categorical features describing residential properties.
+
+## 🧠 Methodology <br/>
+### 1. Data Preprocessing
+- Handled missing values using appropriate imputation strategies (SimpleImputer() was not used - imputation was hard coded for the relevant columns using .fillna())
+- Split features into:
+  - Numerical variables
+  - Categorical variables
+- Applied [sklearn.preprocessing]:
+  - `StandardScaler` for numerical features 
+  - `OneHotEncoder` for categorical features to turn categorical data into numerical data <br/>
+
+### 2. Pipeline Engineering (Core Focus 🚀)
+To ensure scalability and reproducibility: <br/>
+- Built preprocessing workflows using `ColumnTransformer` using the Scikit Learn Library [Compose module]
+- Integrated preprocessing and modeling using `Pipeline` using the Scikit Learn Library [Pipeline module]
+- Enabled efficient experimentation across multiple models without duplicating code <br/>
+
+### 3. Models Implemented
+
+#### 🌳 Baseline Model
+- Decision Tree Regressor
+
+#### 🌲 Bagging
+- Random Forest Regressor
+
+#### 🚀 Boosting
+- Gradient Boosting Regressor
+
+#### 🤝 Ensemble Methods
+- Voting Regressor (combining Random Forest Regressor and Gradient Boost Regressor models)
+- Stacking Regressor (Linear Regression meta-model approach incorporating Random Forest Regressor and Gradient Boost Regressor models) <br/>
+
+## 📊 Model Performance and 📉 Evaluation
+
+| Model | MAE | R² |
+|------|------|----|
+| Decision Tree | ~28290 | ~0.7504 |
+| Random Forest | ~17640 | ~0.8909 |
+| Gradient Boosting | ~18660 | ~0.8881 |
+| Voting Regressor | ~17455 | ~0.8951 |
+| Stacking Regressor | ~17679 | ~0.8985 |
+
+> Decision Tree model's average prediction error is off by $28 290 in comparison to the Voting Regressor's which is $17 455. The Voting Regressor improves accuracy, lowering the average error by roughly 38% compared to the Decision Tree baseline. 
+> Ensemble models significantly outperformed the baseline model in both accuracy and generalisation. <br/>
+
+The following metrics were calculated:
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+- Root Mean Squared Log Error (RMSLE)
+- R² Score (R2) <br/>
+
+Additional evaluation included:
+- Residual analysis
+- Performance breakdown (MAPE%) by price segments <br/>
+
+## 📊 Visual Analysis
+
+### 🔹 Feature Importance Comparison
+> Shows how different models prioritise features differently
+
+![Feature Importance](outputs/plots/feature_importance_heatmap.png)
+
+---
+
+### 🔹 Actual vs Predicted Prices
+> Evaluates how closely predictions align with real values
+
+![Actual vs Predicted](outputs/plots/actual_vs_predicted.png)
+
+---
+
+### 🔹 Error by Price Bracket (Business Insight)
+> Highlights model performance across different housing segments
+
+![MAPE by Price Bracket](outputs/plots/mape_by_price_bracket.png)
+
+---
+
+## 🔍 Key Insights
+
+- Ensemble learning significantly improved performance over a single Decision Tree
+- Different models captured **different feature relationships**
+- Voting and Stacking models provided **more stable predictions**
+- Model performance varied across price ranges:
+  - Strong performance in mid-range properties  
+  - Higher error in high-value properties (likely due to limited data representation)
+
+---
+
+## 🧠 Key Learnings
+
+- Built reusable ML workflows using `Pipeline` and `ColumnTransformer`
+- Developed understanding of:
+  - Bagging vs Boosting
+  - Voting vs Stacking ensembles
+- Learned to:
+  - Evaluate models using multiple metrics
+  - Diagnose model weaknesses through error analysis
+  - Interpret feature importance across models
+- Strengthened ability to structure **end-to-end ML projects**
+
+---
+
+## 🏗️ Project Structure

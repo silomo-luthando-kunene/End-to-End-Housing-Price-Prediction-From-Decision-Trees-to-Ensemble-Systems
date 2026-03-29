@@ -70,24 +70,41 @@ Additional evaluation included:
 ### 🔹 Feature Importance Comparison
 > Shows how different models prioritise features differently
 
-![Feature Importance](outputs/plots/feature_importance_heatmap.png)
+<p align="left">
+  <img src="https://github.com/silomo-luthando-kunene/End-to-End-Housing-Price-Prediction-From-Decision-Trees-to-Ensemble-Systems/blob/main/Visuals/Agg%20Models%20Feature%20Importance%20Matrix.png?raw=true" 
+       alt="Feature Importance" 
+       width="65%" />
+</p>
 
 ---
 
 ### 🔹 Actual vs Predicted Prices
 > Evaluates how closely predictions align with real values
+> There is clear improvement from the base model to the best model used as seen by the clusters tucking closer to the line of best of fit showing that the model's predictions are not far off from the actual values and that there is low bias.
 
-![Actual vs Predicted](outputs/plots/actual_vs_predicted.png)
+<p align="left">
+  <img src="https://github.com/silomo-luthando-kunene/End-to-End-Housing-Price-Prediction-From-Decision-Trees-to-Ensemble-Systems/blob/main/Visuals/Decision%20Tree%20Scatter%20Plot.png?raw=true" 
+       alt="Stacking Regressor Scatter Plot" 
+       width="49%" />
+  <img src="https://github.com/silomo-luthando-kunene/End-to-End-Housing-Price-Prediction-From-Decision-Trees-to-Ensemble-Systems/blob/main/Visuals/Stacking%20Regressor%20Scatter%20Plot.png?raw=true" 
+       alt="Decision Tree Scatter Plot" 
+       width="49%" />
+</p>
 
 ---
 
 ### 🔹 Error by Price Bracket (Business Insight)
 > Highlights model performance across different housing segments
 
-![MAPE by Price Bracket](outputs/plots/mape_by_price_bracket.png)
-
----
-
+<p align="left">
+  <img src="https://github.com/silomo-luthando-kunene/End-to-End-Housing-Price-Prediction-From-Decision-Trees-to-Ensemble-Systems/blob/main/Visuals/Decision%20Tree%20MAPE%20Bins.png?raw=true" 
+       alt="Stacking Regressor MAPE Bins" 
+       width="65%" />
+  <img src="https://github.com/silomo-luthando-kunene/End-to-End-Housing-Price-Prediction-From-Decision-Trees-to-Ensemble-Systems/blob/main/Visuals/Stacking%20Regressor%20MAPE%20Bins.png?raw=true" 
+       alt="Decision Tree MAPE Bins" 
+       width="65%" />
+</p>
+<br/>
 ## 🔍 Key Insights
 
 - Ensemble learning significantly improved performance over a single Decision Tree
@@ -95,22 +112,17 @@ Additional evaluation included:
 - Voting and Stacking models provided **more stable predictions**
 - Model performance varied across price ranges:
   - Strong performance in mid-range properties  
-  - Higher error in high-value properties (likely due to limited data representation)
-
----
+  - Higher error in high-value properties (likely due to limited data representation) <br/>
 
 ## 🧠 Key Learnings
 
 - Built reusable ML workflows using `Pipeline` and `ColumnTransformer`
 - Developed understanding of:
-  - Bagging vs Boosting
-  - Voting vs Stacking ensembles
+  - Bagging vs Boosting [Homogenous Ensemble Methods]
+  - Voting vs Stacking ensembles [Heterogenous Ensemble Methods]
 - Learned to:
   - Evaluate models using multiple metrics
   - Diagnose model weaknesses through error analysis
   - Interpret feature importance across models
-- Strengthened ability to structure **end-to-end ML projects**
+- Strengthened ability to structure **end-to-end ML projects** <br/>
 
----
-
-## 🏗️ Project Structure

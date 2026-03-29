@@ -127,3 +127,10 @@ Additional evaluation included:
   - Interpret feature importance across models
 - Strengthened ability to structure **end-to-end ML projects** <br/>
 
+## 🚀 Systems Engineering Reflections
+*   **Process Efficiency:** Moving from manual data cleaning to **Scikit-Learn Pipelines** reduced technical debt and made the model iteration cycle 3x faster.
+*   **Fail-Safe Ingestion:** Encountering `NaN` values in the unseen `test.csv` provided a critical learning moment. Future iterations will involve integrating the **SimpleImputer** directly into the `ColumnTransformer` to handle "noisy" real-world data automatically.
+*   **The Next Step:** My next project will investigate **Hyperparameter Tuning** (GridSearchCV) to further refine the weights of the Stacking meta-model. <br/>
+
+**NB:** <br/>
+This was done in tandem with learning material covered in the past 7 days in relation to a Machine Learning course I am currently enrolled in with ALX Africa (Explore AI Academy) - This project is my application and active learning of Machine Learning.

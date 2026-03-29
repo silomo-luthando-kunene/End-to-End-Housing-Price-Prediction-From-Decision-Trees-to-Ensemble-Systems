@@ -9,7 +9,8 @@ This project focuses on predicting residential property prices using structured 
 - Model evaluation and error diagnostics  
 
 ### 🎯 **Problem Statement** <br/>
-Predict house sale prices (`SalePrice`) using a dataset containing numerical and categorical features describing residential properties.
+In the real estate market, static pricing models often fail to account for the complex, non-linear relationships between a property’s physical attributes and its market value. This is a **stochastic optimization problem**: how can we build a predictive system that minimizes "Cost of Error" (MAE) across diverse price brackets from budget housing to luxury estates, without our models over-fitting to noise? <br/>
+This project aims to train and compare accurate models to predict residential house sale prices (`SalePrice`) in Ames, Iowa, using a dataset containing numerical and categorical features describing residential properties. <br/>
 
 ## 🧠 Methodology <br/>
 ### 1. Data Preprocessing
@@ -44,13 +45,13 @@ To ensure scalability and reproducibility: <br/>
 
 ## 📊 Model Performance and 📉 Evaluation
 
-| Model | MAE | R² |
-|------|------|----|
-| Decision Tree | ~28290 | ~0.7504 |
-| Random Forest | ~17640 | ~0.8909 |
-| Gradient Boosting | ~18660 | ~0.8881 |
-| Voting Regressor | ~17455 | ~0.8951 |
-| Stacking Regressor | ~17679 | ~0.8985 |
+| Model | MAE | R² | MAPE (Overall) | 
+|------|------|----|---|
+| Decision Tree | ~28290 | ~0.7504 | ~16.16% | 
+| Random Forest | ~17640 | ~0.8909 | ~10.77% |
+| Gradient Boosting | ~18660 | ~0.8881 | ~11.27% |
+| Voting Regressor | ~17455 | ~0.8951 | ~10.61% |
+| Stacking Regressor | ~17679 | ~0.8985 | ~10.54% |
 
 > Decision Tree model's average prediction error is off by $28 290 in comparison to the Voting Regressor's which is $17 455. The Voting Regressor improves accuracy, lowering the average error by roughly 38% compared to the Decision Tree baseline. 
 > Ensemble models significantly outperformed the baseline model in both accuracy and generalisation. <br/>
@@ -105,7 +106,7 @@ Additional evaluation included:
        width="65%" />
 </p>
 <br/>
-## 🔍 Key Insights
+🔍 **Key Insights**
 
 - Ensemble learning significantly improved performance over a single Decision Tree
 - Different models captured **different feature relationships**
